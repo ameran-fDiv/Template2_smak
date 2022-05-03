@@ -78,6 +78,9 @@
     .work-img {
         height: 300px;
     }
+    .box-nav ul li {
+        list-style: square;
+    }
 }
 @media(max-width:380px){
     header .container ul li {
@@ -154,6 +157,9 @@
     .box-nav ul {
         flex-direction: row;
         column-gap: 30px;
+    }
+    .box-nav ul li:first-of-type {
+        list-style: none;
     }
     .about-box {
         grid-template-columns: repeat(2, 1fr);

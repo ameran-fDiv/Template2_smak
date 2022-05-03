@@ -60,4 +60,22 @@ let timer4 = setInterval(function setPos() {
     }
 }, timeEnd);
 
-document.getElementById("yearCopy").textContent = `Ameran ${new Date().getFullYear()}`;
+document.getElementById(
+    "yearCopy"
+).textContent = `Ameran ${new Date().getFullYear()}`;
+// set list style type to our work section
+let listLi = document.querySelectorAll(".box-nav ul li a");
+listLi.forEach((el) => {
+    el.addEventListener("click", (e) => {
+        listLi.forEach((el, index) => {
+            el.classList.remove("active");
+            if(window.innerWidth<768){
+                el.parentElement.style.listStyle = "square";
+            }else{
+                index !== 0 ? (el.parentElement.style.listStyle = "square") : false;
+            }
+        });
+        e.target.classList.add("active");
+        e.target.parentElement.style.listStyle = "none";
+    });
+});
