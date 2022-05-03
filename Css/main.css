@@ -1,4 +1,5 @@
 /*  google font  */
+@import url("normalaze.css");
 @import url("media.css");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap");
 * {
@@ -13,6 +14,11 @@
 *::after {
     padding: 0;
     margin: 0;
+}
+body {
+    margin:0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
 }
 input[type="submit"],
 input[type="button"],
@@ -39,9 +45,6 @@ a:hover {
     --white-color: #fff;
     scroll-behavior: smooth;
     font-size: 1rem;
-}
-body {
-    font-family: "Oswald", sans-serif;
 }
 .container {
     margin-left: auto;
@@ -100,32 +103,28 @@ header .container img {
     height: 70px;
     padding-bottom: 15px;
     padding-top: 15px;
+    max-height: 100%;
 }
 header .container nav {
-    display: flex;
+    display: inline-flex;
     flex: 1;
     justify-content: flex-end;
+    height: 70px;
     align-items: center;
 }
 header .container nav ul {
-    display: flex;
+    display: inline-flex;
 }
 header .container ul li {
     padding-top: 15px;
     padding-bottom: 15px;
-    list-style-type: square;
     color: var(--main-color);
-    padding-left: 35px;
-    padding-right: 20px;
-    margin-right: 15px;
 }
 header .container ul li a {
     display: block;
-    text-decoration: none;
     color: var(--white-color);
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 1rem;
     position: relative;
 }
 header .container ul li:nth-child(1) a {
@@ -177,7 +176,7 @@ header .container ul li:nth-child(1) {
     left: 50%;
     transform: translateX(-50%);
     width: fit-content;
-    padding: 20px;
+    padding: 15px 20px;
     background-color: var(--main-color);
     font-family: "Font Awesome 5 Free";
     font-weight: 700;
@@ -228,24 +227,33 @@ header .container ul li:nth-child(1) {
     background-color: var(--smoke-color);
 }
 .services .container > div:last-of-type {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+    gap: 30px;
+    justify-content: center;
 }
 .services .logo-and-info {
-    width: calc((100% - 80px) / 4);
     text-align: center;
     line-height: 2.5;
 }
 .logo-and-info span {
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     background-color: var(--main-color);
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 .logo-and-info span i {
     position: absolute;
@@ -304,15 +312,19 @@ header .container ul li:nth-child(1) {
     margin-bottom: 60px;
 }
 .how-we-do-it .boxes {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(120px, 1fr)
+    );
+    gap:50px;
     position: relative;
+    justify-content: center;
     z-index: 3;
 }
 .how-we-do-it .boxes > div {
     text-align: center;
-    width: calc(100% / 7);
+
 }
 .how-we-do-it .boxes > div p {
     line-height: 1.4;
@@ -335,13 +347,11 @@ header .container ul li:nth-child(1) {
 /* next */
 /* start our-work */
 .our-work {
-    /* height: 100vh; */
     background-color: var(--white-color);
 }
 .box-nav ul {
     display: inline-flex;
     width: 100%;
-    column-gap: 30px;
     justify-content: center;
     text-transform: uppercase;
     padding: 30px 0;
@@ -360,18 +370,25 @@ header .container ul li:nth-child(1) {
     color: var(--main-color);
 }
 .work-article {
-    margin: 30px 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* gap:30px; */
-    align-items: center;
-    justify-content: center;
+    margin: 25px 0;
+    display: flex;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
-.work-article img {
+.work-img {
+    display: flex;
+    align-items: center;
     width: 400px;
-    height: 300px;
+    height: 400px;
+}
+.work-article .work-img img {
+    width: 90%;
     image-rendering: pixelated;
+}
+.work-article .work-discription {
+    padding: 15px 30px;
 }
 .work-article .work-discription h2 {
     text-transform: capitalize;
@@ -451,9 +468,9 @@ header .container ul li:nth-child(1) {
 /* start about us */
 .about-box {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     gap: 30px;
+    padding: 0;
 }
 .about-box .bx {
     display: grid;
@@ -466,6 +483,7 @@ header .container ul li:nth-child(1) {
     background-color: var(--main-color);
     color: var(--white-color);
     height: 60px;
+    width: 60px;
     display: grid;
     place-content: center;
     border-radius: 50%;
@@ -579,8 +597,6 @@ header .container ul li:nth-child(1) {
 .my-skill .alert {
     width: 500px;
     padding: 0 30px;
-    /*border:1px solid var(--main-color);
- */
     position: absolute;
     top: 0;
     margin-top: 0;
@@ -591,9 +607,7 @@ header .container ul li:nth-child(1) {
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     background-color: rgb(255 255 255 /3%);
-    /*display: none;
- */
-    z-index: -1;
+    z-index: -100;
     opacity: 0;
     transition: all 0.3s linear 0.2s;
     -webkit-transition: all 0.3s linear 0.2s;
@@ -603,7 +617,7 @@ header .container ul li:nth-child(1) {
 }
 .alert .message p {
     font-size: 0.8rem;
-    line-height: 2;
+    line-height: 2.2;
     font-weight: 200;
     letter-spacing: 1px;
     color: var(--white-color);
@@ -665,6 +679,7 @@ header .container ul li:nth-child(1) {
     margin-bottom: 1rem;
     color: var(--white-color);
     font-weight: 400;
+    line-height: 2;
 }
 #about-me:hover + .alert + .skills {
     opacity: 0.1;
@@ -739,7 +754,6 @@ svg {
 }
 .find-us .address {
     display: flex;
-    justify-content: space-between;
     padding: 30px 0;
 }
 .find-us .box {
@@ -766,9 +780,6 @@ svg {
     display: flex;
     gap: 30px;
 }
-.inputs input {
-    width: calc(100% / 3);
-}
 .inputs input,
 textarea {
     background-color: transparent;
@@ -790,10 +801,9 @@ textarea {
     -o-transition: opacitiy 0.3s ease-in-out 0.1s;
 }
 #textarea {
-    width: 100%;
+    display: block;
     height: 300px;
     resize: none;
-    margin: 15px 0;
 }
 input[type="submit"] {
     color: var(--black-color);
